@@ -1,27 +1,12 @@
 <template>
   <div class="pa-8" style="width: 800px">
-    <h1>Login</h1>
+    <h1>Error</h1>
+    <h1>{{ this.$route.params.msg }}</h1>
     <br />
-    <v-form ref="form" v-model="valid" lazy-validation>
-      <v-text-field
-        v-model="name"
-        :rules="Rules"
-        label="Username"
-        required
-      ></v-text-field>
 
-      <v-text-field
-        type="password"
-        v-model="password"
-        :rules="Rules"
-        label="Password"
-        required
-      ></v-text-field>
-
-      <v-btn color="success" class="mr-4 mt-4" @click="validate">
-        Validate
-      </v-btn>
-    </v-form>
+    <v-btn color="disable" class="mr-4 mt-4" href="/table">
+      back
+    </v-btn>
   </div>
 </template>
 
