@@ -89,11 +89,9 @@ export default {
             }
           )
           .then((response) => {
-            console.log(response);
             this.$router.push("/table");
           })
           .catch((error) => {
-            console.log(error.response);
             this.$router.push(
               "/error/" +
                 error.response.status +

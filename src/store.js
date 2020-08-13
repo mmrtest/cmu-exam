@@ -5,8 +5,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    username: "user1",
-    password: "menbe9VhvUMCFIuUakAC",
+    username: "",
+    password: "",
   },
   mutations: {},
   actions: {

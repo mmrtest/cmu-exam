@@ -19,15 +19,5 @@ export default {
     password: "",
     Rules: [(v) => !!v || "Fill out this field"],
   }),
-
-  methods: {
-    validate() {
-      if (this.$refs.form.validate()) {
-        this.$store.dispatch("setUsername", this.name);
-        this.$store.dispatch("setPassword", this.password);
-        this.$router.push("/table");
-      }
-    },
-  },
 };
 </script>
