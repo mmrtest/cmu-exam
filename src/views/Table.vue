@@ -29,7 +29,7 @@
                 >
                   Update
                 </v-btn>
-                <v-btn color="error" class="mr-4">
+                <v-btn color="error" class="mr-4" @click="deleteUser(item._id)">
                   Delete
                 </v-btn>
               </td>
@@ -73,6 +73,19 @@ export default {
   methods: {
     updateUser(id) {
       this.$router.push("/update/" + id);
+    },
+    async deleteUser(id) {
+      await axios
+        .delete("https://dummy-api.cm.edu/employees/" + id, {
+          auth: {
+            username: this.username,
+            password: this.password,
+          },
+        })
+        .then((response) => {
+          // delete
+        });
+      this.$router.go();
     },
   },
 };
