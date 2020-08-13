@@ -22,7 +22,11 @@
               <td>{{ item.birthday }}</td>
               <td>{{ item.email }}</td>
               <td>
-                <v-btn color="primary" class="mr-4" href="/update">
+                <v-btn
+                  color="primary"
+                  class="mr-4"
+                  @click="updateUser(item._id)"
+                >
                   Update
                 </v-btn>
                 <v-btn color="error" class="mr-4">
@@ -65,6 +69,11 @@ export default {
       .then((response) => {
         this.data = response.data;
       });
+  },
+  methods: {
+    updateUser(id) {
+      this.$router.push("/update/" + id);
+    },
   },
 };
 </script>
